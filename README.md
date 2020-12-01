@@ -1,6 +1,10 @@
 # SimpleAdmin
 Codeigniter 4 Boilerplate Admin Dashboard, built on the backbone of SimpleAuth
 
+As default SimpleAdmin comes ready to run out of the box and various modules or plugins can be quickly installed to build out your next application. 
+
+If you want to learn the inner workings of SimpleAdmin and how to create new user roles and their corresponding Controllers, Models and DB tables read on..
+
 ### Folder Structure
 In order to keep SimpleAdmin clean and modular all roles, users, modules and expantions will all have their own dedicated folder structure. I.e :
 
@@ -82,14 +86,24 @@ Why dont we just not declare the index method? Honestly its probably just develo
 
 We now need to decide what methods we need to include in our controller, and what methods of the AuthLibrary class we need to use. The most simplest would be login and logout methods. Do we require user registration? Do we want to offer forgot password functionality or remember me? Do we want to use a lock screen? For this example we will include the full functionality of SimpleAuth so we will start by registering a user.
 
+## Register 
+
 Create a new method named register()
 
 ```php
 public function register()
 	{
-		
+	
+	return view('auth/register');
+	
 	}
 ```
+
+SimpleAdmin comes with views for all the required auth classes, Register, Login, Forgot Password etc. They can be found by default in the Views/Auth folder. For this example we wont go into too much detail about the default views but they can be used as a starting point for your own projects.
+
+Open up Views/auth/register.php
+
+The only thing we will concentrate on for the sake of this tutorial is the hidden input field 'role'. and the form action route. 
 
 
 
